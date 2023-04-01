@@ -7,13 +7,16 @@ extends Node3D
 @export var zoom_speed = 1
 @export var move_speed = 1
 
+@export var ground : StaticBody3D 
+
+signal ground_clicked(click_position : Vector3)
+
 var camera_movement = Vector3(0, 0, 0)
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	# Move camera pivot in xz-plane
 	# Depends on zoom level
@@ -30,4 +33,11 @@ func _input(event):
 	camera_movement = Vector3(cam_vec2.x, 0, cam_vec2.y)
 	
 	if event.is_action_pressed("click_left"):
-		print("Clicked")
+		var worldspace = get_world_3d().direct_space_state
+		var origin = camera.project_ray_origin(event.position)
+		var end = camera.project_position(event.position, 10000)
+		var raycast_parameters = PhysicsRayQueryParameters3D.create(origin, end)
+		var intersection = worldspace.intersect_ray(raycast_parameters)
+		if intersection["collider"] == ground:
+			var click_position = intersection["position"]
+			emit_signal("ground_clicked", click_position)
