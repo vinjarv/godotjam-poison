@@ -7,3 +7,4 @@
 script = ExtResource("1_gajv2")
 
 [node name="housetest" parent="." instance=ExtResource("2_nkkmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
