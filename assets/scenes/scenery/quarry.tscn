@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fkrv0emja2qd"]
+
+[ext_resource type="ArrayMesh" uid="uid://b20bj50i4a877" path="res://assets/models/Overworld/Quarry.obj" id="1_3gvwp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tclc"]
+size = Vector3(1, 0.874977, 1)
+
+[node name="quarry" type="Node3D"]
+
+[node name="Quarry" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3gvwp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00998163, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4.71135, 0, 0, 0, 2.6182, 0, 0, 0, 5.09125, 0.319592, 0.796712, -0.125576)
+shape = SubResource("BoxShape3D_3tclc")
