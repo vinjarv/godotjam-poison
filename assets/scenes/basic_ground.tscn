@@ -1,6 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://duhf5t52fo7ov"]
-
-[ext_resource type="PackedScene" uid="uid://cbovfe2op6wko" path="res://assets/scenes/basic_house.tscn" id="1_iw5lp"]
+[gd_scene load_steps=6 format=3 uid="uid://duhf5t52fo7ov"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2bgyd"]
 noise_type = 0
@@ -34,6 +32,3 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_cau88")
-
-[node name="basic_house" parent="." instance=ExtResource("1_iw5lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03571, 0, -7.9831)

@@ -1,18 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://brcejnn1e23gq"]
+[gd_scene load_steps=3 format=3 uid="uid://cbovfe2op6wko"]
 
-[ext_resource type="PackedScene" uid="uid://cg4j2iyts2wqa" path="res://assets/models/Environment/Peasant house.glb" id="1_jmgcj"]
+[ext_resource type="PackedScene" uid="uid://cg4j2iyts2wqa" path="res://assets/models/Environment/Peasant house.glb" id="1_nd8a5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnadg"]
-size = Vector3(2.47902, 2.67795, 2.01994)
+size = Vector3(7.63, 10.819, 7.58543)
 
 [node name="basic_house" type="Node3D"]
+metadata/_edit_group_ = true
 
 [node name="HouseStaticBody" type="StaticBody3D" parent="."]
-transform = Transform3D(3.19811, 0, 0, 0, 3.19811, 0, 0, 0, 3.19811, 0.825117, 1.90735e-06, 2.15161)
 
 [node name="HouseCollisionShape" type="CollisionShape3D" parent="HouseStaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33132, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229855, 5.37689, -0.0229855)
 shape = SubResource("BoxShape3D_wnadg")
 
-[node name="Peasant house" parent="." instance=ExtResource("1_jmgcj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.0231245, 1)
+[node name="Peasant house" parent="HouseStaticBody" instance=ExtResource("1_nd8a5")]
