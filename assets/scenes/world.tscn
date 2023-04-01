@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://l377twinrbti"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
 [ext_resource type="Script" path="res://assets/scripts/CameraControl.gd" id="3_n4cc2"]
+[ext_resource type="PackedScene" uid="uid://d2xfyjy7dviy8" path="res://assets/scenes/basic_infected_script.tscn" id="4_6e2jd"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
@@ -35,5 +36,21 @@ environment = SubResource("Environment_wnhhi")
 camera_attributes = SubResource("CameraAttributesPractical_tj207")
 
 [node name="basic_ground" parent="." instance=ExtResource("3_k0xm0")]
+
+[node name="test_infected" parent="basic_ground" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="test_infected2" parent="basic_ground" instance=ExtResource("4_6e2jd")]
+
+[node name="test_infected3" parent="basic_ground" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="test_infected4" parent="basic_ground" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[connection signal="ground_clicked" from="CameraPivot" to="basic_ground/test_infected" method="_on_camera_pivot_ground_clicked"]
+[connection signal="ground_clicked" from="CameraPivot" to="basic_ground/test_infected2" method="_on_camera_pivot_ground_clicked"]
+[connection signal="ground_clicked" from="CameraPivot" to="basic_ground/test_infected3" method="_on_camera_pivot_ground_clicked"]
+[connection signal="ground_clicked" from="CameraPivot" to="basic_ground/test_infected4" method="_on_camera_pivot_ground_clicked"]
 
 [editable path="basic_ground"]
