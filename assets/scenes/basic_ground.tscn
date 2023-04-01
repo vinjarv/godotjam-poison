@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://duhf5t52fo7ov"]
+
+[ext_resource type="PackedScene" uid="uid://dn7pixx12qpqv" path="res://assets/models/housetest/housetest.glb" id="1_p67hd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30w6b"]
+albedo_color = Color(0.784314, 0.494118, 0.305882, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0pb4v"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cau88"]
+
+[node name="basic_ground" type="Node3D"]
+
+[node name="housetest" parent="." instance=ExtResource("1_p67hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -14)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_30w6b")
+mesh = SubResource("PlaneMesh_0pb4v")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_cau88")
