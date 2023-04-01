@@ -4,8 +4,10 @@ extends CharacterBody3D
 @export var speed = 225
 var click_position = Vector3(0,0,0)
 
-# Set the healh of the infected
-var health = 50
+# Set the healh of the infected and time between health loss
+@export var health = 50
+@export var time_since_plague_health_loss = 25
+var time = 0
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -15,7 +17,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Get where the mouse clicked on the 
 func _on_camera_pivot_ground_clicked(mouse_clicked_position):
-	print("est")
 	click_position =  mouse_clicked_position
 
 func _physics_process(delta):
@@ -30,12 +31,22 @@ func _physics_process(delta):
 		velocity = Vector3.ZERO
 		set_animation("idle")
 	
-	#print("move towards ", click_direction)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
 	move_and_slide()
+
+func _process(delta):
+	time += delta
+	if  (time > time_since_plague_health_loss):
+		health -= 1
+		time = 0
+		print("current health: ", health)
+	
+
+func death():
+	hide()
 
 func _ready():
 	click_position = position

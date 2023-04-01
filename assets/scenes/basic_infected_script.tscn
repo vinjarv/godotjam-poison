@@ -104,6 +104,8 @@ _data = {
 [node name="test_infected" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
 script = ExtResource("1_cdcvt")
+health = 5
+time_since_plague_health_loss = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1.5547, 0, 1, 0, -1, 0, -6.79581e-08, 0, 1.03852, 0.0919301)
