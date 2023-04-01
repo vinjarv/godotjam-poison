@@ -31,3 +31,5 @@ func _input(event):
 	var cam_vec2 = Input.get_vector("camera_left", "camera_right", "camera_up", "camera_down")
 	camera_movement = Vector3(cam_vec2.x, 0, cam_vec2.y)
 	
+	if event.is_action_pressed("click_left"):
+		print("Clicked")
