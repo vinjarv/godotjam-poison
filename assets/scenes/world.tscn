@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
 [ext_resource type="Script" path="res://assets/scripts/CameraControl.gd" id="3_n4cc2"]
-[ext_resource type="PackedScene" uid="uid://d2xfyjy7dviy8" path="res://assets/scenes/basic_infected_script.tscn" id="4_6e2jd"]
+[ext_resource type="PackedScene" path="res://assets/scenes/basic_infected_script.tscn" id="4_6e2jd"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
