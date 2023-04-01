@@ -20,8 +20,6 @@ func _process(delta):
 	position += camera_movement * move_speed * camera.size * delta 
 
 func _input(event):
-	
-	
 	if event.is_action_pressed("zoom_in"):
 		camera.size += zoom_speed
 	if event.is_action_pressed("zoom_out"):

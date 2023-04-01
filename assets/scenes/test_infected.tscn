@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://drmj8yw4tpgge"]
+[gd_scene load_steps=4 format=3 uid="uid://d2xfyjy7dviy8"]
 
 [ext_resource type="Script" path="res://assets/scripts/infected_base.gd" id="1_cdcvt"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_mgdr1"]
+[ext_resource type="PackedScene" uid="uid://qohoslpynmwa" path="res://assets/models/Blender assets.blend" id="2_ls465"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1j88o"]
+radius = 0.325596
+height = 2.06095
 
 [node name="test_infected" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -4)
 script = ExtResource("1_cdcvt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_mgdr1")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03852, 0.00637507)
 shape = SubResource("CapsuleShape3D_1j88o")
+
+[node name="Blender assets" parent="." instance=ExtResource("2_ls465")]
