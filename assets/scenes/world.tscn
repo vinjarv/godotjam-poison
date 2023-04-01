@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://l377twinrbti"]
+
+[ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
+[ext_resource type="PackedScene" uid="uid://dn7pixx12qpqv" path="res://assets/models/housetest/housetest.glb" id="2_nkkmh"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_gajv2")
+
+[node name="housetest" parent="." instance=ExtResource("2_nkkmh")]
