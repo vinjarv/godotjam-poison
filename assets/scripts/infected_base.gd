@@ -7,6 +7,8 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+# Set the healh of the infected
+var health = 50
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -29,3 +31,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+@export var speed = 300
+var click_position = Vector3(0,0,0)
+
+func _ready():
+	click_position = position
