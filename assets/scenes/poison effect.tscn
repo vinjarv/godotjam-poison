@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpue3slrvyown"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2d4sq"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector3(0, 0.3, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0joi"]
+albedo_color = Color(0.823529, 0, 0.0784314, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_5hmpb"]
+material = SubResource("StandardMaterial3D_o0joi")
+text = "OH NO 😔"
+font_size = 33
+
+[node name="poison effect" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.192944, 0, 0, 0, 0.192944, 0, 0, 0, 0.192944, 0, 1.51217, 0)
+amount = 4
+lifetime = 4.0
+explosiveness = 0.33
+randomness = 0.78
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_2d4sq")
+draw_pass_1 = SubResource("TextMesh_5hmpb")
