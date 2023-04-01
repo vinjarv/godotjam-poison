@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://dn7pixx12qpqv" path="res://assets/models/housetest/housetest.glb" id="2_nkkmh"]
 [ext_resource type="Script" path="res://assets/scripts/CameraControl.gd" id="3_n4cc2"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ttixs"]
+[ext_resource type="PackedScene" uid="uid://jdd4l1mo6ag1" path="res://assets/scenes/basic ground.scn" id="4_54c07"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
@@ -30,10 +29,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.7
 light_energy = 0.194
 shadow_enabled = true
 directional_shadow_max_distance = 352.1
-
-[node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
-mesh = SubResource("PlaneMesh_ttixs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wnhhi")
@@ -62,3 +57,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5973, 3.8147e-06, -17.2944
 
 [node name="housetest4" parent="Houses" instance=ExtResource("2_nkkmh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0753, 0, 19.2016)
+
+[node name="Ground" parent="." instance=ExtResource("4_54c07")]
