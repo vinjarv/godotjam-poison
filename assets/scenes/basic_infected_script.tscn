@@ -9,6 +9,33 @@
 radius = 0.325596
 height = 2.06095
 
+[sub_resource type="Animation" id="Animation_ehwyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_rd5yj"]
 resource_name = "idle"
 length = 0.4
@@ -38,33 +65,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 1.07624, 0.23), Vector3(0, 0, 0), Vector3(-0.206719, 0.808927, 0.048568), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ehwyi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_e58r0"]
 resource_name = "walking"
 length = 0.2
@@ -79,7 +79,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.514087), Vector3(0, 0, 0.51091), Vector3(0, 0, -0.514087)]
+"values": [Vector3(0, 0, -0.514087), Vector3(0, 0, 0.443785), Vector3(0, 0, -0.514087)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ayfw7"]
