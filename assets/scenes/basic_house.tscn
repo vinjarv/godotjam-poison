@@ -32,6 +32,7 @@ shape = SubResource("BoxShape3D_wnadg")
 [node name="Peasant house" parent="HouseStaticBody" instance=ExtResource("1_nd8a5")]
 
 [node name="Cylinders" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
