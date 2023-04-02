@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccfe0axpdo77n"]
+[gd_scene load_steps=11 format=3 uid="uid://c3jaicyfenv8d"]
 
+[ext_resource type="Script" path="res://assets/scripts/knight_enemy.gd" id="1_41vte"]
 [ext_resource type="ArrayMesh" uid="uid://c4km5b01dotk8" path="res://assets/models/Characters/knight.obj" id="1_crb58"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1j88o"]
@@ -179,9 +180,11 @@ _data = {
 "walking": SubResource("Animation_e58r0")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xs0vn"]
+
 [node name="Knight" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
-collision_layer = 5
+script = ExtResource("1_41vte")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1.5547, 0, 1, 0, -1, 0, -6.79581e-08, 0, 1.03852, 0.0919301)
@@ -201,4 +204,17 @@ libraries = {
 "": SubResource("AnimationLibrary_ayfw7")
 }
 
+[node name="HostileDetector" type="Area3D" parent="."]
+collision_layer = 5
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HostileDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_xs0vn")
+
+[node name="attackDelay" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="HostileDetector" to="." method="_on_hostile_detector_body_entered"]

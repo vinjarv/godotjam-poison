@@ -72,6 +72,11 @@ click_wheel={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_3="Enemies"
+3d_physics/layer_4="Friendly"
+
 [rendering]
 
 anti_aliasing/quality/msaa_2d=1
