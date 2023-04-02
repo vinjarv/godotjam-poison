@@ -7,7 +7,6 @@ var click_position = Vector3(0,0,0)
 # Set the healh of the infected and time between health loss
 @export var health = 50
 @export var time_since_plague_health_loss = 25
-var is_alive = true
 var time = 0
 
 const SPEED = 5.0
