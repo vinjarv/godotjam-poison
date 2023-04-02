@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://djua1ojnnvbts"]
+
+[ext_resource type="PackedScene" uid="uid://dmbrv6l2fdqbx" path="res://assets/models/Environment/Brick tower.glb" id="1_rgubn"]
+[ext_resource type="PackedScene" uid="uid://dj3p4prfy2ot2" path="res://assets/models/Environment/Brick wall.glb" id="2_s88xj"]
+
+[node name="Wall" type="Node3D"]
+
+[node name="Brick tower" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.978213, 0, -0.207604, 0, 1, 0, 0.207604, 0, 0.978213, 24.3275, 0, -31.538)
+
+[node name="Brick wall" parent="Brick tower" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower2" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.686707, 0, -0.726934, 0, 1, 0, 0.726934, 0, 0.686707, 35.7109, 0.332705, -18.6158)
+
+[node name="Brick wall" parent="Brick tower2" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower3" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.128519, 0, -0.991707, 0, 1, 0, 0.991707, 0, -0.128519, 33.3501, 0.332705, -0.263823)
+
+[node name="Brick wall" parent="Brick tower3" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower4" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.163688, 0, -0.986512, 0, 1, 0, 0.986512, 0, 0.163688, 36.4509, 0.332705, 15.4095)
+
+[node name="Brick wall" parent="Brick tower4" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower5" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.00729547, 0, -0.999973, 0, 1, 0, 0.999973, 0, 0.00729547, 36.7075, 0.084856, 32.0387)
+
+[node name="Brick wall" parent="Brick tower5" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower6" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.990232, 0, -0.139432, 0, 1, 0, 0.139432, 0, -0.990232, 20.0615, 0.084856, 34.4454)
+
+[node name="Brick wall" parent="Brick tower6" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower7" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.973595, 0, 0.228283, 0, 1, 0, -0.228283, 0, -0.973595, 3.63865, 0.00394392, 29.8085)
+
+[node name="Brick wall" parent="Brick tower7" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower8" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.999358, 0.0101402, -0.0343571, 0.0101342, 0.999948, 0.000348406, 0.0343589, -1.06428e-10, -0.99941, -13.9503, 0.0128589, 30.5964)
+
+[node name="Brick wall" parent="Brick tower8" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower9" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.992587, -0.000241749, -0.121537, 0.000286017, 0.99999, -0.00432502, 0.121537, -0.00432772, -0.992577, -31.5063, 0.27138, 33.0077)
+
+[node name="Brick wall" parent="Brick tower9" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower10" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.106325, 0.00491575, 0.994319, -0.0236436, 0.999692, -0.00747057, -0.994051, -0.0243035, -0.106176, -33.4663, -0.213873, 15.6567)
+
+[node name="Brick wall" parent="Brick tower10" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower11" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.135449, 0.0106071, 0.990728, -0.0236436, 0.999692, -0.00747057, -0.990502, -0.0224124, 0.135659, -30.4533, 0.00727487, -1.32743)
+
+[node name="Brick wall" parent="Brick tower11" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower12" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.30822, -0.00018061, 0.951315, -0.0236436, 0.999692, -0.00747057, -0.951021, -0.024795, -0.30813, -34.8512, 0.00727487, -17.75)
+
+[node name="Brick wall" parent="Brick tower12" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower13" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(-0.110505, 0.00481349, 0.993864, -0.0236436, 0.999693, -0.00747057, -0.993594, -0.024324, -0.110357, -36.3003, 0.00727487, -34.4397)
+
+[node name="Brick wall" parent="Brick tower13" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower14" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.951528, 0.020211, -0.306898, -0.0236436, 0.999692, -0.00747057, 0.306653, 0.0143646, 0.951713, -19.2176, 0.00727487, -29.4123)
+
+[node name="Brick wall" parent="Brick tower14" instance=ExtResource("2_s88xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4295, -0.379697, 0.0688515)
+
+[node name="Brick tower15" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(0.988375, 0.0244972, 0.15005, -0.0236436, 0.999692, -0.00747057, -0.150187, 0.003836, 0.98865, -5.43763, 0.00727487, -31.6559)
+
+[node name="Brick wall" parent="Brick tower15" instance=ExtResource("2_s88xj")]
+transform = Transform3D(0.871368, 1.13505e-08, 0, -1.08848e-08, 0.996812, -2.56114e-09, 8.9407e-08, 1.62981e-09, 0.980472, -13.5324, 0.0980422, 0.058033)
+
+[node name="Brick tower16" parent="." instance=ExtResource("1_rgubn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71265, 0, -35.3103)

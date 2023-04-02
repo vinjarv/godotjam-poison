@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0uix5iowl16f"]
+[gd_scene load_steps=9 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
 [ext_resource type="Script" path="res://assets/scripts/CameraControl.gd" id="3_n4cc2"]
 [ext_resource type="PackedScene" uid="uid://b3l3c3fn0dkot" path="res://assets/scenes/basic_infected_script.tscn" id="4_6e2jd"]
-[ext_resource type="PackedScene" uid="uid://cbovfe2op6wko" path="res://assets/scenes/basic_house.tscn" id="5_51e8j"]
+[ext_resource type="PackedScene" uid="uid://brcejnn1e23gq" path="res://assets/scenes/basic_house.tscn" id="5_51e8j"]
+[ext_resource type="PackedScene" uid="uid://djua1ojnnvbts" path="res://assets/scenes/Wall.tscn" id="6_287tn"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
@@ -60,6 +61,8 @@ transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2, 0, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49918, 0, -8.33416)
 
 [node name="basic_ground" parent="." instance=ExtResource("3_k0xm0")]
+
+[node name="Wall" parent="." instance=ExtResource("6_287tn")]
 
 [connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected" method="_on_camera_pivot_ground_clicked"]
 [connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected2" method="_on_camera_pivot_ground_clicked"]

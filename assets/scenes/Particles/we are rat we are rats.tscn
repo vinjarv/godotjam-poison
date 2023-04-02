@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://bdnirrwwxdmbg"]
+[gd_scene load_steps=3 format=3 uid="uid://bdnirrwwxdmbg"]
+
+[ext_resource type="ArrayMesh" uid="uid://chf78k0inynx5" path="res://assets/models/Characters/Rat.obj" id="1_ww4jj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_15wc2"]
+direction = Vector3(0, 0, 0)
+spread = 37.21
+gravity = Vector3(0, 0, 1)
+scale_min = 0.5
+scale_max = 0.5
+turbulence_enabled = true
+turbulence_noise_strength = 3.98
+turbulence_noise_scale = 3.45
+turbulence_noise_speed = Vector3(0, 0, 2)
 
 [node name="we are rat we are rats" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 4
+lifetime = 4.0
+speed_scale = 2.19
+randomness = 0.09
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_15wc2")
+draw_pass_1 = ExtResource("1_ww4jj")

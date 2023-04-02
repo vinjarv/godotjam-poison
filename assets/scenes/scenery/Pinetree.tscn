@@ -14,5 +14,4 @@ mesh = ExtResource("1_ulvfh")
 transform = Transform3D(3.36771, 0, 0, 0, 2.83634, 0, 0, 0, 3.12644, 0, 3.67307, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_tnccw")
