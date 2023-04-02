@@ -6,10 +6,16 @@ var game_win_state = false
 func _ready():
 	print("Hello World")
 	$CameraPivot/VictoryScreen.hide()
+	get_window().min_size = Vector2i(800, 500)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $fort/Troops.get_child_count() == 0 && game_win_state == false :
+	var forts = $Forts.get_children()
+	var num_troops_alive = 0
+	for fort in forts:
+		num_troops_alive += fort.find_child("Troops").get_child_count()
+		
+	if num_troops_alive == 0 && game_win_state == false :
 		$CameraPivot/VictoryScreen.show()
 		game_win_state = true
 

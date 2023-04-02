@@ -34,6 +34,7 @@ near = 10.0
 far = 1000.0
 
 [node name="SelectOverlay" type="ColorRect" parent="CameraPivot"]
+visible = false
 offset_right = 467.0
 offset_bottom = 303.0
 color = Color(0.0509804, 1, 0, 0.196078)
@@ -56,11 +57,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CameraPivot/VictoryScreen/Panel"]
-layout_mode = 2
-offset_top = 28.0
-offset_right = 1152.0
-offset_bottom = 244.0
+[node name="WinText" type="Control" parent="CameraPivot/VictoryScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.5
+offset_right = 143.5
+offset_bottom = 167.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CameraPivot/VictoryScreen/Panel/WinText"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -52.0
+offset_right = 62.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "You win! 
 Congratulations"
@@ -68,30 +86,58 @@ label_settings = SubResource("LabelSettings_5ppjr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CameraPivot/VictoryScreen/Panel"]
-layout_mode = 0
-offset_left = 467.0
-offset_top = 303.0
-offset_right = 683.0
-offset_bottom = 364.0
+[node name="ActionPrompt" type="Control" parent="CameraPivot/VictoryScreen/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -332.5
+offset_top = -333.0
+offset_right = 332.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Content" type="Control" parent="CameraPivot/VictoryScreen/Panel/ActionPrompt"]
+anchors_preset = 0
+offset_right = 671.0
+offset_bottom = 167.0
+
+[node name="Label2" type="Label" parent="CameraPivot/VictoryScreen/Panel/ActionPrompt/Content"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_right = 108.0
+offset_bottom = 61.0
+grow_horizontal = 2
 text = "What do you wanna do?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ExitButton" type="Button" parent="CameraPivot/VictoryScreen/Panel"]
-layout_mode = 0
-offset_left = 683.0
-offset_top = 397.0
-offset_right = 885.0
-offset_bottom = 472.0
+[node name="ExitButton" type="Button" parent="CameraPivot/VictoryScreen/Panel/ActionPrompt/Content"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -75.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Exit game"
 
-[node name="RestartButton" type="Button" parent="CameraPivot/VictoryScreen/Panel"]
-layout_mode = 0
-offset_left = 284.0
-offset_top = 397.0
-offset_right = 504.0
-offset_bottom = 472.0
+[node name="RestartButton" type="Button" parent="CameraPivot/VictoryScreen/Panel/ActionPrompt/Content"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -75.0
+offset_right = 220.0
+grow_vertical = 0
 text = "Restart game"
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
@@ -646,11 +692,17 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 36.9267, -0.05753
 [node name="dudeweedlmao28" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 32.8702, -0.0575314, -0.0666447)
 
-[node name="fort" parent="." instance=ExtResource("9_gmg3c")]
+[node name="Forts" type="Node3D" parent="."]
+
+[node name="fort" parent="Forts" instance=ExtResource("9_gmg3c")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 17.8979, 0, -16.1949)
+amount_of_troops = 4
+
+[node name="fort2" parent="Forts" instance=ExtResource("9_gmg3c")]
+transform = Transform3D(2.08616e-07, 0, 1, 0, 1, 0, -1, 0, 2.08616e-07, 1.51651, 0, -65.5856)
 amount_of_troops = 7
 
-[connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/ExitButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/RestartButton" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/ActionPrompt/Content/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/ActionPrompt/Content/RestartButton" to="." method="_on_button_2_pressed"]
 
 [editable path="basic_ground"]

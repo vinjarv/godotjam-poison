@@ -16,7 +16,7 @@ func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
 	var enemy_spawn_location = get_node("SpawnPath/SpawnLocation")
 	enemy_spawn_location.progress_ratio = randf()
-	get_tree().get_root().get_node("World/fort/Troops").add_child(enemy)
+	$Troops.add_child(enemy)
 	enemy.global_position = enemy_spawn_location.global_position
 	# Look away from fort
 	enemy.look_at(global_position, Vector3.UP)
