@@ -48,4 +48,4 @@ mesh = SubResource("CylinderMesh_rktv3")
 curve = SubResource("Curve3D_7uuop")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.00398413, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00398413, -7.04144, 0, 5.08845)
+transform = Transform3D(-0.00398425, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00398425, -7.04144, 0, 5.08845)
