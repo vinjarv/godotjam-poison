@@ -7,6 +7,7 @@ var click_position = Vector3(0,0,0)
 # Set the healh of the infected and time between health loss
 @export var health = 50
 @export var time_since_plague_health_loss = 25
+var is_alive = true
 var time = 0
 
 const SPEED = 5.0
@@ -37,16 +38,25 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
+# Makes the unit lose health over time
+# If this brings the units HP to 0, it dies
 func _process(delta):
 	time += delta
 	if  (time > time_since_plague_health_loss):
 		health -= 1
 		time = 0
 		print("current health: ", health)
+	if (health <= 0):
+		death()
 	
 
+# Starts the death animation
 func death():
-	hide()
+	set_animation("death")
+
+# Removes the unit from queue once the death animation is over
+func _on_animation_player_animation_finished(death):
+	queue_free()
 
 func _ready():
 	click_position = position
@@ -55,8 +65,11 @@ func _ready():
 	$AnimationPlayer.advance(0.3 * randf())
 	
 func set_animation(name):
-	if $AnimationPlayer.current_animation != name:
+	if $AnimationPlayer.current_animation == "death":
+		pass
+	elif $AnimationPlayer.current_animation != name:
 		$AnimationPlayer.play(name)
 		var length = $AnimationPlayer.get_animation(name).length
 		print(length)
 		$AnimationPlayer.advance(length * randf())
+	
