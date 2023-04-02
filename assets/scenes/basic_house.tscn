@@ -1,12 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://brcejnn1e23gq"]
+[gd_scene load_steps=8 format=3 uid="uid://brcejnn1e23gq"]
 
+[ext_resource type="Script" path="res://assets/scripts/basic_house.gd" id="1_eibls"]
 [ext_resource type="PackedScene" uid="uid://cg4j2iyts2wqa" path="res://assets/models/Environment/Peasant house.glb" id="1_nd8a5"]
+[ext_resource type="PackedScene" uid="uid://bd48rq1oshtw6" path="res://assets/scenes/UI/house_interface.tscn" id="3_7bn8i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnadg"]
 size = Vector3(7.63, 10.819, 7.58543)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fga4m"]
+albedo_color = Color(0.113725, 1, 1, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rktv3"]
+material = SubResource("StandardMaterial3D_fga4m")
+
+[sub_resource type="Curve3D" id="Curve3D_7uuop"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.04144, 0, 5.08845, 0, 0, 0, 0, 0, 0, 7.02405, 0, 5.03241, 0, 0, 0, 0, 0, 0, -0.0927465, 0, 9.01109, 0, 0, 0, 0, 0, 0, -7.04144, 0, 5.08845),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
 [node name="basic_house" type="Node3D"]
-metadata/_edit_group_ = true
+script = ExtResource("1_eibls")
 
 [node name="HouseStaticBody" type="StaticBody3D" parent="."]
 
@@ -15,3 +30,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0229855, 5.37689, -0.02298
 shape = SubResource("BoxShape3D_wnadg")
 
 [node name="Peasant house" parent="HouseStaticBody" instance=ExtResource("1_nd8a5")]
+
+[node name="Cylinders" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+mesh = SubResource("CylinderMesh_rktv3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5)
+mesh = SubResource("CylinderMesh_rktv3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+mesh = SubResource("CylinderMesh_rktv3")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_7uuop")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.00398425, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00398425, -7.04144, 0, 5.08845)
+
+[node name="house_UI_origin" parent="." instance=ExtResource("3_7bn8i")]
+
+[connection signal="spawn_peasant" from="house_UI_origin" to="." method="spawn_new_infected"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd48rq1oshtw6"]
+
+[ext_resource type="Script" path="res://assets/scripts/house_interface.gd" id="1_2lgcs"]
+
+[node name="house_UI_origin" type="Node3D"]
+script = ExtResource("1_2lgcs")
+
+[node name="house_interface" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="house_interface"]
+layout_mode = 0
+offset_right = 284.0
+offset_bottom = 191.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="house_interface/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="house_interface/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Basic House"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpawnButton" type="Button" parent="house_interface/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = " New unit "
+
+[node name="ExitButton" type="Button" parent="house_interface/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_bottom = 35.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 19
+text = "X"
+
+[connection signal="pressed" from="house_interface/Panel/VBoxContainer/SpawnButton" to="." method="_on_spawn_button_pressed"]
+[connection signal="pressed" from="house_interface/Panel/ExitButton" to="." method="_on_exit_button_pressed"]

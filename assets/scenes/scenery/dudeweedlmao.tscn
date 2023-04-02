@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwahi8ggvvgfy"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3jpp3yps4k7u" path="res://assets/models/Environment/weed.obj" id="1_hkb1u"]
+[ext_resource type="Script" path="res://assets/scripts/dudeweedlmao.gd" id="1_insan"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dw15u"]
+load_path = "res://.godot/imported/weedlmao.png-a49f5581655e4913496d7ebaebb6c426.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmvy8"]
+render_priority = 1
+transparency = 1
+albedo_color = Color(0.729412, 0.658824, 0.658824, 1)
+albedo_texture = SubResource("CompressedTexture2D_dw15u")
+
+[node name="dudeweedlmao" type="Node3D"]
+script = ExtResource("1_insan")
+
+[node name="Weed" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.000413552, 0.101623, -0.0841732)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300747, -0.00320892, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.302415, 0.0847054, 0.236674)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.437449, 0.247893, 0.144155)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.134621, 0.230975, 0.465002)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.768981, -0.0757017, -0.359631)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 1.07181, -0.092619, -0.0387839)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.331946, 0.0705681, -0.131303)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.634774, 0.0536508, 0.189544)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.168709, -0.238788, -0.622217)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.134119, -0.255706, -0.30137)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.605745, -0.0925185, -0.393889)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.302917, -0.109436, -0.0730415)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.600686, -0.416113, -0.897675)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.903514, -0.43303, -0.576827)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.16365, -0.269843, -0.669346)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
+
+[node name="Weed16" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.466478, -0.28676, -0.348499)
+material_override = SubResource("StandardMaterial3D_bmvy8")
+mesh = ExtResource("1_hkb1u")
