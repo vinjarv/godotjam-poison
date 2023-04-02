@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="house_interface"]
+layout_mode = 0
 offset_right = 284.0
 offset_bottom = 191.0
 
