@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0uix5iowl16f"]
+[gd_scene load_steps=8 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
+[ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
 [ext_resource type="Script" path="res://assets/scripts/CameraControl.gd" id="3_n4cc2"]
 [ext_resource type="PackedScene" uid="uid://b3l3c3fn0dkot" path="res://assets/scenes/basic_infected_script.tscn" id="4_6e2jd"]
 [ext_resource type="PackedScene" uid="uid://cbovfe2op6wko" path="res://assets/scenes/basic_house.tscn" id="5_51e8j"]
@@ -10,31 +11,14 @@
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tj207"]
 auto_exposure_enabled = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_2bgyd"]
-noise_type = 0
-frequency = 0.019
-fractal_gain = 1.158
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f6ms6"]
-width = 4096
-height = 4096
-noise = SubResource("FastNoiseLite_2bgyd")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30w6b"]
-albedo_color = Color(0.784314, 0.494118, 0.305882, 1)
-albedo_texture = SubResource("NoiseTexture2D_f6ms6")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_0pb4v"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cau88"]
-
 [node name="World" type="Node3D"]
 script = ExtResource("1_gajv2")
 
-[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("ground")]
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("ground", "peasant_parent")]
 transform = Transform3D(0.989411, 0.12956, 0.0654356, -0.0664898, 0.805304, -0.589122, -0.129022, 0.578533, 0.80539, 0, 0, 0)
 script = ExtResource("3_n4cc2")
 ground = NodePath("../basic_ground/Ground")
+peasant_parent = NodePath("../Peasants")
 
 [node name="Camera" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 3.72529e-08, 7.37607e-07, -7.45058e-09, 5.96046e-08, 1, 7.45058e-09, -1, 6.25849e-07, 6.67572e-06, 200, -7.62939e-06)
@@ -43,7 +27,7 @@ size = 16.735
 near = 10.0
 far = 1000.0
 
-[node name="SelectArea" type="ColorRect" parent="CameraPivot"]
+[node name="SelectOverlay" type="ColorRect" parent="CameraPivot"]
 offset_right = 467.0
 offset_bottom = 303.0
 color = Color(0.0509804, 1, 0, 0.196078)
@@ -72,25 +56,14 @@ transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 1, 0, -4
 [node name="test_infected4" parent="Peasants" instance=ExtResource("4_6e2jd")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2, 0, -2)
 
-[node name="basic_ground" type="Node3D" parent="."]
-
-[node name="Ground" type="StaticBody3D" parent="basic_ground"]
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="basic_ground/Ground"]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_30w6b")
-mesh = SubResource("PlaneMesh_0pb4v")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="basic_ground/Ground"]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
-shape = SubResource("WorldBoundaryShape3D_cau88")
-
 [node name="basic_house" parent="." instance=ExtResource("5_51e8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49918, 0, -8.33416)
+
+[node name="basic_ground" parent="." instance=ExtResource("3_k0xm0")]
 
 [connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected" method="_on_camera_pivot_ground_clicked"]
 [connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected2" method="_on_camera_pivot_ground_clicked"]
 [connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected3" method="_on_camera_pivot_ground_clicked"]
 [connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected4" method="_on_camera_pivot_ground_clicked"]
+
+[editable path="basic_ground"]

@@ -21,6 +21,7 @@ albedo_texture = SubResource("NoiseTexture2D_f6ms6")
 [node name="basic_ground" type="Node3D"]
 
 [node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 3
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
