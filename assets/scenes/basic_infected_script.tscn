@@ -185,6 +185,8 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pdkn"]
+render_priority = 2
+transparency = 1
 albedo_color = Color(0.298039, 1, 0, 1)
 emission_enabled = true
 emission = Color(0.17649, 0.53, 0.0689, 1)

@@ -1,11 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd48n28e77fsu"]
+[gd_scene load_steps=4 format=3 uid="uid://dwahi8ggvvgfy"]
 
-[ext_resource type="ArrayMesh" path="res://assets/models/Environment/weed.obj" id="1_hkb1u"]
+[ext_resource type="ArrayMesh" uid="uid://b3jpp3yps4k7u" path="res://assets/models/Environment/weed.obj" id="1_hkb1u"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dw15u"]
 load_path = "res://.godot/imported/weedlmao.png-a49f5581655e4913496d7ebaebb6c426.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmvy8"]
+render_priority = 1
 transparency = 1
 albedo_texture = SubResource("CompressedTexture2D_dw15u")
 
