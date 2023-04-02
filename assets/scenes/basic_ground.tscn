@@ -15,6 +15,7 @@ albedo_color = Color(0.784314, 0.494118, 0.305882, 1)
 albedo_texture = SubResource("NoiseTexture2D_f6ms6")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0pb4v"]
+size = Vector2(6, 6)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cau88"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0uix5iowl16f"]
+[gd_scene load_steps=12 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djua1ojnnvbts" path="res://assets/scenes/Wall.tscn" id="6_287tn"]
 [ext_resource type="PackedScene" uid="uid://daj23u3gdx3vc" path="res://assets/scenes/scenery/Pinetree.tscn" id="7_2y3hi"]
 [ext_resource type="PackedScene" uid="uid://fkrv0emja2qd" path="res://assets/scenes/scenery/quarry.tscn" id="8_72uod"]
+[ext_resource type="PackedScene" uid="uid://chgqr0s43pup4" path="res://assets/scenes/fort.tscn" id="9_gmg3c"]
 [ext_resource type="PackedScene" uid="uid://dwahi8ggvvgfy" path="res://assets/scenes/scenery/dudeweedlmao.tscn" id="9_h2bod"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
@@ -38,6 +39,7 @@ color = Color(0.0509804, 1, 0, 0.196078)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.77792, 0)
 light_energy = 0.194
 shadow_enabled = true
+shadow_bias = 0.045
 directional_shadow_max_distance = 352.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -47,6 +49,9 @@ camera_attributes = SubResource("CameraAttributesPractical_tj207")
 [node name="Peasants" type="Node3D" parent="."]
 
 [node name="basic_ground" parent="." instance=ExtResource("3_k0xm0")]
+
+[node name="MeshInstance3D" parent="basic_ground/Ground" index="0"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0.0986252, 3.8147e-06, -0.00300598)
 
 [node name="Wall" parent="." instance=ExtResource("6_287tn")]
 
@@ -455,6 +460,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.611, 0, -38.3015)
 [node name="basic_house" parent="Houses" instance=ExtResource("5_51e8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49918, 0, -8.33416)
 
+[node name="basic_house2" parent="Houses" instance=ExtResource("5_51e8j")]
+transform = Transform3D(0.33147, 0, 0.943466, 0, 1, 0, -0.943466, 0, 0.33147, -21.7279, -1.90735e-06, 2.97049)
+
 [node name="Grass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.181956, 0)
 
@@ -576,5 +584,9 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 36.9267, -0.05753
 
 [node name="dudeweedlmao28" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 32.8702, -0.0575314, -0.0666447)
+
+[node name="fort" parent="." instance=ExtResource("9_gmg3c")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 11.7085, 0, -62.8645)
+amount_of_troops = 100
 
 [editable path="basic_ground"]

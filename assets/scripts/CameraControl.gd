@@ -49,7 +49,7 @@ func _input(event):
 	if event.is_action_pressed("zoom_in"):
 		camera.size += zoom_speed * zoom_modifier
 	if event.is_action_pressed("zoom_out"):
-		camera.size -= zoom_speed * zoom_modifier
+		camera.size = max(min_zoom_size, camera.size - zoom_speed * zoom_modifier)
 	camera.size = clamp(camera.size, min_zoom_size, max_zoom_size)
 
 	var cam_vec2 = Input.get_vector("camera_left", "camera_right", "camera_up", "camera_down")
