@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://fkrv0emja2qd"]
+[gd_scene load_steps=4 format=3 uid="uid://fkrv0emja2qd"]
 
 [ext_resource type="ArrayMesh" uid="uid://b20bj50i4a877" path="res://assets/models/Overworld/Quarry.obj" id="1_3gvwp"]
+[ext_resource type="Script" path="res://assets/scripts/dudeweedlmao.gd" id="1_04p2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tclc"]
 size = Vector3(1, 0.874977, 1)
 
 [node name="quarry" type="Node3D"]
+script = ExtResource("1_04p2s")
 
 [node name="Quarry" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_3gvwp")

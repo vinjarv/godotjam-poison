@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://djua1ojnnvbts" path="res://assets/scenes/Wall.tscn" id="6_287tn"]
 [ext_resource type="PackedScene" uid="uid://daj23u3gdx3vc" path="res://assets/scenes/scenery/Pinetree.tscn" id="7_2y3hi"]
 [ext_resource type="PackedScene" uid="uid://fkrv0emja2qd" path="res://assets/scenes/scenery/quarry.tscn" id="8_72uod"]
-[ext_resource type="PackedScene" uid="uid://bd48n28e77fsu" path="res://assets/scenes/scenery/dudeweedlmao.tscn" id="9_h2bod"]
+[ext_resource type="PackedScene" uid="uid://dwahi8ggvvgfy" path="res://assets/scenes/scenery/dudeweedlmao.tscn" id="9_h2bod"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
@@ -377,7 +377,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.273, 0, -0.625996)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9199, 0, -4.51656)
 
 [node name="quarry12" parent="Rocks" instance=ExtResource("8_72uod")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0406, 2.3552, 3.90906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0406, 0.102423, 3.90906)
 
 [node name="quarry13" parent="Rocks" instance=ExtResource("8_72uod")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5873, 0, 10.2735)

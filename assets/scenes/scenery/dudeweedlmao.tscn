@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwahi8ggvvgfy"]
+[gd_scene load_steps=5 format=3 uid="uid://dwahi8ggvvgfy"]
 
 [ext_resource type="ArrayMesh" uid="uid://b3jpp3yps4k7u" path="res://assets/models/Environment/weed.obj" id="1_hkb1u"]
+[ext_resource type="Script" path="res://assets/scripts/dudeweedlmao.gd" id="1_insan"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dw15u"]
 load_path = "res://.godot/imported/weedlmao.png-a49f5581655e4913496d7ebaebb6c426.s3tc.ctex"
@@ -11,6 +12,7 @@ transparency = 1
 albedo_texture = SubResource("CompressedTexture2D_dw15u")
 
 [node name="dudeweedlmao" type="Node3D"]
+script = ExtResource("1_insan")
 
 [node name="Weed" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, -0.000413552, 0.101623, -0.0841732)
@@ -18,7 +20,7 @@ material_override = SubResource("StandardMaterial3D_bmvy8")
 mesh = ExtResource("1_hkb1u")
 
 [node name="Weed2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.99999, 0.00300748, -0.00320893, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.302415, 0.0847054, 0.236674)
+transform = Transform3D(0.99999, 0.00300747, -0.00320892, -0.00082238, 0.844638, 0.535337, 0.00432039, -0.535329, 0.844633, 0.302415, 0.0847054, 0.236674)
 material_override = SubResource("StandardMaterial3D_bmvy8")
 mesh = ExtResource("1_hkb1u")
 
