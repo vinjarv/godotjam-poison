@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://l377twinrbti"]
+[gd_scene load_steps=9 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
-[ext_resource type="PackedScene" uid="uid://dn7pixx12qpqv" path="res://assets/models/housetest/housetest.glb" id="2_nkkmh"]
+[ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
 [ext_resource type="Script" path="res://assets/scripts/CameraControl.gd" id="3_n4cc2"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ttixs"]
+[ext_resource type="PackedScene" uid="uid://b3l3c3fn0dkot" path="res://assets/scenes/basic_infected_script.tscn" id="4_6e2jd"]
+[ext_resource type="PackedScene" uid="uid://brcejnn1e23gq" path="res://assets/scenes/basic_house.tscn" id="5_51e8j"]
+[ext_resource type="PackedScene" uid="uid://djua1ojnnvbts" path="res://assets/scenes/Wall.tscn" id="6_287tn"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
@@ -14,16 +15,23 @@ auto_exposure_enabled = true
 [node name="World" type="Node3D"]
 script = ExtResource("1_gajv2")
 
-[node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(0.965897, 0.258923, 0.00136819, -0.223367, 0.835905, -0.501369, -0.13096, 0.483965, 0.865232, 0, 0, 0)
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("ground", "peasant_parent")]
+transform = Transform3D(0.989411, 0.12956, 0.0654356, -0.0664898, 0.805304, -0.589122, -0.129022, 0.578533, 0.80539, 0, 0, 0)
 script = ExtResource("3_n4cc2")
+ground = NodePath("../basic_ground/Ground")
+peasant_parent = NodePath("../Peasants")
 
 [node name="Camera" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 200, 0)
+transform = Transform3D(1, 3.72529e-08, 7.37607e-07, -7.45058e-09, 5.96046e-08, 1, 7.45058e-09, -1, 6.25849e-07, 6.67572e-06, 200, -7.62939e-06)
 projection = 1
 size = 16.735
 near = 10.0
 far = 1000.0
+
+[node name="SelectOverlay" type="ColorRect" parent="CameraPivot"]
+offset_right = 467.0
+offset_bottom = 303.0
+color = Color(0.0509804, 1, 0, 0.196078)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.77792, 0)
@@ -31,34 +39,34 @@ light_energy = 0.194
 shadow_enabled = true
 directional_shadow_max_distance = 352.1
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
-mesh = SubResource("PlaneMesh_ttixs")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wnhhi")
 camera_attributes = SubResource("CameraAttributesPractical_tj207")
 
-[node name="Houses" type="Node3D" parent="."]
+[node name="Peasants" type="Node3D" parent="."]
 
-[node name="housetest_fancy" parent="Houses" instance=ExtResource("2_nkkmh")]
+[node name="test_infected" parent="Peasants" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Houses/housetest_fancy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188927, 1.27986, 1.91071)
-light_energy = 0.21
-light_size = 0.625
-shadow_enabled = true
-shadow_bias = 0.458
-omni_range = 6.32
+[node name="test_infected2" parent="Peasants" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2, 0, 0)
 
-[node name="housetest" parent="Houses" instance=ExtResource("2_nkkmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6242, -7.62939e-06, 27.0754)
+[node name="test_infected3" parent="Peasants" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 1, 0, -4)
 
-[node name="housetest2" parent="Houses" instance=ExtResource("2_nkkmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60098, 3.8147e-06, 11.6834)
+[node name="test_infected4" parent="Peasants" instance=ExtResource("4_6e2jd")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2, 0, -2)
 
-[node name="housetest3" parent="Houses" instance=ExtResource("2_nkkmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5973, 3.8147e-06, -17.2944)
+[node name="basic_house" parent="." instance=ExtResource("5_51e8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49918, 0, -8.33416)
 
-[node name="housetest4" parent="Houses" instance=ExtResource("2_nkkmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0753, 0, 19.2016)
+[node name="basic_ground" parent="." instance=ExtResource("3_k0xm0")]
+
+[node name="Wall" parent="." instance=ExtResource("6_287tn")]
+
+[connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected" method="_on_camera_pivot_ground_clicked"]
+[connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected2" method="_on_camera_pivot_ground_clicked"]
+[connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected3" method="_on_camera_pivot_ground_clicked"]
+[connection signal="ground_clicked" from="CameraPivot" to="Peasants/test_infected4" method="_on_camera_pivot_ground_clicked"]
+
+[editable path="basic_ground"]

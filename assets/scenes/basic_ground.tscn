@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://duhf5t52fo7ov"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2bgyd"]
+noise_type = 0
+frequency = 0.019
+fractal_gain = 1.158
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f6ms6"]
+width = 4096
+height = 4096
+noise = SubResource("FastNoiseLite_2bgyd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30w6b"]
+albedo_color = Color(0.784314, 0.494118, 0.305882, 1)
+albedo_texture = SubResource("NoiseTexture2D_f6ms6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0pb4v"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cau88"]
+
+[node name="basic_ground" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 3
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_30w6b")
+mesh = SubResource("PlaneMesh_0pb4v")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_cau88")

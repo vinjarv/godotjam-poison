@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://daj23u3gdx3vc"]
+
+[ext_resource type="ArrayMesh" uid="uid://6iiegl6l7sic" path="res://assets/models/Overworld/pinetree.obj" id="1_ulvfh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnccw"]
+size = Vector3(1, 2.69093, 1)
+
+[node name="Pinetree" type="Node3D"]
+
+[node name="Pinetree" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ulvfh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(3.36771, 0, 0, 0, 2.83634, 0, 0, 0, 3.12644, 0, 3.67307, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_tnccw")
