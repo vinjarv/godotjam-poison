@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0uix5iowl16f"]
+[gd_scene load_steps=13 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://fkrv0emja2qd" path="res://assets/scenes/scenery/quarry.tscn" id="8_72uod"]
 [ext_resource type="PackedScene" uid="uid://chgqr0s43pup4" path="res://assets/scenes/fort.tscn" id="9_gmg3c"]
 [ext_resource type="PackedScene" uid="uid://dwahi8ggvvgfy" path="res://assets/scenes/scenery/dudeweedlmao.tscn" id="9_h2bod"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ppjr"]
 
 [sub_resource type="Environment" id="Environment_wnhhi"]
 
@@ -34,6 +36,62 @@ far = 1000.0
 offset_right = 467.0
 offset_bottom = 303.0
 color = Color(0.0509804, 1, 0, 0.196078)
+
+[node name="VictoryScreen" type="ColorRect" parent="CameraPivot"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 0.572549, 1)
+
+[node name="Panel" type="Panel" parent="CameraPivot/VictoryScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CameraPivot/VictoryScreen/Panel"]
+layout_mode = 2
+offset_top = 28.0
+offset_right = 1152.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 20
+text = "You win! 
+Congratulations"
+label_settings = SubResource("LabelSettings_5ppjr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CameraPivot/VictoryScreen/Panel"]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 303.0
+offset_right = 683.0
+offset_bottom = 364.0
+text = "What do you wanna do?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CameraPivot/VictoryScreen/Panel"]
+layout_mode = 0
+offset_left = 683.0
+offset_top = 397.0
+offset_right = 885.0
+offset_bottom = 472.0
+text = "Exit game"
+
+[node name="RestartButton" type="Button" parent="CameraPivot/VictoryScreen/Panel"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 397.0
+offset_right = 504.0
+offset_bottom = 472.0
+text = "Restart game"
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.77792, 0)
@@ -588,5 +646,8 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 32.8702, -0.05753
 [node name="fort" parent="." instance=ExtResource("9_gmg3c")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 11.7085, 0, -62.8645)
 amount_of_troops = 7
+
+[connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/RestartButton" to="." method="_on_button_2_pressed"]
 
 [editable path="basic_ground"]
