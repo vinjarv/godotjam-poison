@@ -16,10 +16,8 @@ turbulence_noise_speed = Vector3(0, 0, 2)
 [node name="we are rat we are rats" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-emitting = false
 amount = 4
 lifetime = 4.0
-one_shot = true
 speed_scale = 2.19
 randomness = 0.09
 transform_align = 3
