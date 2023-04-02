@@ -587,6 +587,6 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 32.8702, -0.05753
 
 [node name="fort" parent="." instance=ExtResource("9_gmg3c")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 11.7085, 0, -62.8645)
-amount_of_troops = 100
+amount_of_troops = 7
 
 [editable path="basic_ground"]

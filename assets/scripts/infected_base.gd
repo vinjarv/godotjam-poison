@@ -70,6 +70,8 @@ func take_damage(hostile_attack_power):
 	health = new_health
 	if (health <= 0):
 		death()
+	$DamageAnimation.play("Damage")
+	$DamageAnimation.seek(0)
 
 # Starts the death animation
 func death():
@@ -92,7 +94,6 @@ func set_animation(name):
 	elif $AnimationPlayer.current_animation != name:
 		$AnimationPlayer.play(name)
 		var length = $AnimationPlayer.get_animation(name).length
-		print(length)
 		$AnimationPlayer.advance(length * randf())
 	
 

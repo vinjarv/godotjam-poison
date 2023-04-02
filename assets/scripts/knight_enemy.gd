@@ -23,7 +23,6 @@ func _on_hostile_detector_body_entered(body):
 	print(hostile_attack_power)
 	take_damage(hostile_attack_power)
 	$attackDelay.start()
-	
 
 func attack_cooldown():
 	disable_collision_layer()
@@ -35,6 +34,8 @@ func take_damage(hostile_attack_power):
 	health = new_health
 	if (health <= 0):
 		death()
+	$DamageAnimation.play("Damage")
+	$DamageAnimation.seek(0)
 
 # Starts the death animation
 func death():
@@ -56,7 +57,6 @@ func set_animation(name):
 	elif $AnimationPlayer.current_animation != name:
 		$AnimationPlayer.play(name)
 		var length = $AnimationPlayer.get_animation(name).length
-		print(length)
 		$AnimationPlayer.advance(length * randf())
 
 func disable_collision_layer():
