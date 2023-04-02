@@ -1,7 +1,7 @@
 # Blender 3.5.0
 # www.blender.org
-mtllib Rat Hat.mtl
-o Rat_hat
+mtllib RatHat.mtl
+o RatHat
 v 0.280778 1.646677 -0.119159
 v 0.286537 1.646503 -0.109527
 v 0.289200 1.649288 -0.098986
