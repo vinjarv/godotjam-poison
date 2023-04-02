@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://brcejnn1e23gq"]
+[gd_scene load_steps=8 format=3 uid="uid://brcejnn1e23gq"]
 
 [ext_resource type="Script" path="res://assets/scripts/basic_house.gd" id="1_eibls"]
 [ext_resource type="PackedScene" uid="uid://cg4j2iyts2wqa" path="res://assets/models/Environment/Peasant house.glb" id="1_nd8a5"]
+[ext_resource type="PackedScene" uid="uid://bd48rq1oshtw6" path="res://assets/scenes/UI/house_interface.tscn" id="3_7bn8i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnadg"]
 size = Vector3(7.63, 10.819, 7.58543)
@@ -49,3 +50,7 @@ curve = SubResource("Curve3D_7uuop")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
 transform = Transform3D(-0.00398425, 0, 0.999992, 0, 1, 0, -0.999992, 0, -0.00398425, -7.04144, 0, 5.08845)
+
+[node name="house_UI_origin" parent="." instance=ExtResource("3_7bn8i")]
+
+[connection signal="spawn_peasant" from="house_UI_origin" to="." method="spawn_new_infected"]

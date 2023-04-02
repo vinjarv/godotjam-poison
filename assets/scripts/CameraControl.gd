@@ -57,8 +57,7 @@ func _input(event):
 
 	if event.is_action_pressed("click_right"):
 		var world_click_position = get_ground_position(event.position)
-		if world_click_position != null:
-			emit_signal("ground_clicked", world_click_position)
+		emit_signal("ground_clicked", world_click_position)
 
 	if event.is_action_pressed("click_left"):
 		dragging = true
@@ -79,9 +78,13 @@ func _input(event):
 			var collided_mesh : CollisionObject3D = intersection["collider"]
 			if peasants.has(collided_mesh):
 				select_peasants([collided_mesh])
-			else:
-				pass
-				
+			var houses = house_parent.get_children()
+			for house in houses:
+				if collided_mesh == house.find_child("HouseStaticBody"):
+					# House is selected
+					house.find_child("house_interface").show()
+				else:
+					house.find_child("house_interface").hide()
 		else:
 			# Handle drag
 			var peasants_in_selection = []
