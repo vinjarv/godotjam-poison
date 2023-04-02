@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3l3c3fn0dkot"]
+[gd_scene load_steps=16 format=3 uid="uid://dhfqw68ifdulj"]
 
 [ext_resource type="Script" path="res://assets/scripts/infected_base.gd" id="1_cdcvt"]
 [ext_resource type="PackedScene" uid="uid://dge04uy1obupb" path="res://assets/models/Characters/Hats/Bird hat.glb" id="2_dwvht"]
 [ext_resource type="PackedScene" uid="uid://ciux50fxah4wb" path="res://assets/models/Characters/Holdables/Pitchfork.glb" id="3_qsl4c"]
 [ext_resource type="PackedScene" uid="uid://dsimvya8q6vsg" path="res://assets/models/Characters/Peasants/Green vest peasant.glb" id="4_1dbpu"]
+[ext_resource type="PackedScene" uid="uid://dpue3slrvyown" path="res://assets/scenes/Particles/poison effect.tscn" id="5_kr75f"]
+[ext_resource type="PackedScene" uid="uid://bdnirrwwxdmbg" path="res://assets/scenes/Particles/we are rat we are rats.tscn" id="6_1cba2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1j88o"]
 radius = 0.325596
@@ -182,6 +184,18 @@ _data = {
 "walking": SubResource("Animation_e58r0")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pdkn"]
+albedo_color = Color(0.298039, 1, 0, 1)
+emission_enabled = true
+emission = Color(0.17649, 0.53, 0.0689, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nw5uo"]
+material = SubResource("StandardMaterial3D_2pdkn")
+top_radius = 0.568
+bottom_radius = 0.568
+height = 0.031
+radial_segments = 12
+
 [node name="test_infected" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
 collision_layer = 5
@@ -195,7 +209,7 @@ shape = SubResource("CapsuleShape3D_1j88o")
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
 
 [node name="Bird hat" parent="Origin" instance=ExtResource("2_dwvht")]
-transform = Transform3D(-0.032602, 0.0555446, 0.997924, -0.165691, 0.984339, -0.0602015, -0.985639, -0.16731, -0.0228881, -0.0358908, 0, 0.114219)
+transform = Transform3D(-0.032602, 0.0555446, 0.997924, -0.165691, 0.984339, -0.0602015, -0.985639, -0.16731, -0.0228881, -0.108, 0, 0.356)
 
 [node name="Pitchfork" parent="Origin" instance=ExtResource("3_qsl4c")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 2.98023e-08, -1, 0, -4.37114e-08, -0.0358908, -3.72529e-09, 0.114219)
@@ -209,4 +223,18 @@ libraries = {
 "": SubResource("AnimationLibrary_ayfw7")
 }
 
+[node name="poison effect" parent="." instance=ExtResource("5_kr75f")]
+visible = false
+
+[node name="selected_ring" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.127398)
+visible = false
+mesh = SubResource("CylinderMesh_nw5uo")
+
+[node name="we are rat we are rats" parent="." instance=ExtResource("6_1cba2")]
+
+[node name="RatTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="RatTimer" to="." method="_on_rat_timer_timeout"]
