@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://djua1ojnnvbts"]
+[gd_scene load_steps=4 format=3 uid="uid://djua1ojnnvbts"]
 
 [ext_resource type="PackedScene" uid="uid://dmbrv6l2fdqbx" path="res://assets/models/Environment/Brick tower.glb" id="1_rgubn"]
 [ext_resource type="PackedScene" uid="uid://dj3p4prfy2ot2" path="res://assets/models/Environment/Brick wall.glb" id="2_s88xj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3qcw"]
 
 [node name="Wall" type="Node3D"]
 
@@ -97,3 +99,25 @@ transform = Transform3D(0.871368, 1.13505e-08, 0, -1.08848e-08, 0.996812, -2.561
 
 [node name="Brick tower16" parent="." instance=ExtResource("1_rgubn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71265, 0, -35.3103)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShapewall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(79.2149, 0, 0, 0, 7.64596, 0, 0, 0, 3.52475, 0.382693, 1.83222, 32.0027)
+shape = SubResource("BoxShape3D_c3qcw")
+
+[node name="CollisionShapewall2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4.12369, 0, -3.51997, 0, 7.64596, 0, 79.1074, 0, 0.183488, -32.4636, 1.83222, -1.18907)
+shape = SubResource("BoxShape3D_c3qcw")
+
+[node name="CollisionShapewall3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4.12369, 0, -3.51997, 0, 7.64596, 0, 79.1074, 0, 0.183488, 35.7965, 1.83222, -1.18907)
+shape = SubResource("BoxShape3D_c3qcw")
+
+[node name="CollisionShapewall4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(29.5671, 0.163603, -1.50417, -1.20735, 7.6382, -0.0895151, 14.4642, 0.303142, 3.06728, 21.9978, 1.83222, -29.7999)
+shape = SubResource("BoxShape3D_c3qcw")
+
+[node name="CollisionShapewall5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(32.9096, 0.276348, -0.0676091, -1.20735, 7.6382, -0.0895151, 0.619779, 0.205651, 3.41557, -20.0982, 1.8819, -31.7303)
+shape = SubResource("BoxShape3D_c3qcw")
