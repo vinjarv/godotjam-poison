@@ -9,6 +9,7 @@ load_path = "res://.godot/imported/weedlmao.png-a49f5581655e4913496d7ebaebb6c426
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmvy8"]
 render_priority = 1
 transparency = 1
+albedo_color = Color(0.729412, 0.658824, 0.658824, 1)
 albedo_texture = SubResource("CompressedTexture2D_dw15u")
 
 [node name="dudeweedlmao" type="Node3D"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0uix5iowl16f"]
+[gd_scene load_steps=15 format=3 uid="uid://b0uix5iowl16f"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gajv2"]
 [ext_resource type="PackedScene" uid="uid://duhf5t52fo7ov" path="res://assets/scenes/basic_ground.tscn" id="3_k0xm0"]
@@ -12,10 +12,47 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ppjr"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrwas"]
+sky_top_color = Color(0.490196, 0.564706, 0.662745, 1)
+sky_horizon_color = Color(0.14902, 0.152941, 0.160784, 1)
+sky_curve = 4.8
+sky_energy_multiplier = 2.27
+sky_cover_modulate = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.14902, 0.152941, 0.160784, 1)
+ground_curve = 0.16
+
+[sub_resource type="Sky" id="Sky_w2stm"]
+sky_material = SubResource("ProceduralSkyMaterial_qrwas")
+
 [sub_resource type="Environment" id="Environment_wnhhi"]
+background_mode = 2
+background_color = Color(0.411765, 0.341176, 0.266667, 1)
+background_energy_multiplier = 0.73
+sky = SubResource("Sky_w2stm")
+ambient_light_source = 2
+ambient_light_color = Color(0.2, 0.180392, 0.145098, 1)
+ambient_light_energy = 2.52
+tonemap_mode = 3
+tonemap_exposure = 0.75
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 3.89
+glow_bloom = 0.04
+fog_density = 0.0002
+fog_height = -66.95
+volumetric_fog_density = 0.0101
+volumetric_fog_albedo = Color(0.494118, 0.494118, 0.494118, 1)
+volumetric_fog_anisotropy = 0.21
+volumetric_fog_ambient_inject = 0.02
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tj207"]
 auto_exposure_enabled = true
+auto_exposure_scale = 0.2
+auto_exposure_speed = 9.55
+dof_blur_far_distance = 0.01
+dof_blur_far_transition = -1.0
+dof_blur_amount = 0.01
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_gajv2")
@@ -141,10 +178,13 @@ grow_vertical = 0
 text = "Restart game"
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.77792, 0)
-light_energy = 0.194
+transform = Transform3D(0.509765, -0.00212678, 0.860311, -0.737997, 0.512863, 0.438557, -0.442154, -0.858468, 0.25987, 0, 6.77792, 0)
+light_color = Color(1, 0.831373, 0.701961, 1)
+light_energy = 0.546
 shadow_enabled = true
-shadow_bias = 0.045
+shadow_bias = 0.281
+shadow_reverse_cull_face = true
+shadow_blur = 0.576
 directional_shadow_max_distance = 352.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -171,7 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9341, -2.38419e-06, -14.34
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.66033, -2.38419e-06, -20.1871)
 
 [node name="Pinetree3" parent="Trees" instance=ExtResource("7_2y3hi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2563, 0, -4.37784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8984, 0, -1.97526)
 
 [node name="Pinetree4" parent="Trees" instance=ExtResource("7_2y3hi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8446, 0, 17.3967)
@@ -568,12 +608,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.611, 0, -38.3015)
 transform = Transform3D(0.911195, 0, 0.411976, 0, 1, 0, -0.411976, 0, 0.911195, -6.19224, 0, -6.22816)
 
 [node name="basic_house2" parent="Houses" instance=ExtResource("5_51e8j")]
-transform = Transform3D(0.432746, 0, -0.901516, 0, 1, 0, 0.901516, 0, 0.432746, 16.9934, -1.90735e-06, 19.7728)
+transform = Transform3D(0.714985, 0, -0.69914, 0, 1, 0, 0.69914, 0, 0.714985, 15.7269, -1.90735e-06, 19.4112)
 
 [node name="Grass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.181956, 0)
 
 [node name="dudeweedlmao" parent="Grass" instance=ExtResource("9_h2bod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29185, -9.53674e-07, 3.99131)
 
 [node name="dudeweedlmao2" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -28.2418, -0.0575352, -22.942)
@@ -603,16 +644,16 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 32.1506, -0.05753
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 28.0941, -0.0575314, 15.8836)
 
 [node name="dudeweedlmao11" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -2.41517, -0.0575314, 9.23346)
+transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -12.4605, -0.0575314, 11.3)
 
 [node name="dudeweedlmao12" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -6.47171, -0.0575314, 3.46564)
+transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -13.0832, -0.0575314, -0.829905)
 
 [node name="dudeweedlmao13" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 18.128, -0.0575314, 1.38743)
 
 [node name="dudeweedlmao14" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 14.0715, -0.0575314, -4.38039)
+transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 20.9679, -0.0575314, 8.05008)
 
 [node name="dudeweedlmao15" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -33.5181, -0.0575314, 0.786815)
@@ -645,7 +686,7 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 14.8061, -0.05753
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 10.7496, -0.0575314, 28.0427)
 
 [node name="dudeweedlmao29" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 10.4735, -0.019453, 13.361)
+transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 6.61533, -0.019453, 13.4953)
 
 [node name="dudeweedlmao30" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -10.4474, -0.019453, -21.8095)
@@ -657,13 +698,13 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -28.9055, -0.0194
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 34.55, -0.0575314, 34.8405)
 
 [node name="dudeweedlmao32" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 2.3621, -0.0575314, -5.51159)
+transform = Transform3D(4.01144, 0, -2.3318, 0, 1, 0, 2.13777, 0, 4.37553, 10.1734, -0.0575324, 3.0086)
 
 [node name="dudeweedlmao33" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 11.0264, -0.0575314, -5.89217)
+transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 13.2028, -0.0575314, 8.4481)
 
 [node name="dudeweedlmao34" parent="Grass" instance=ExtResource("9_h2bod")]
-transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -1.32015, -0.0575314, -13.1279)
+transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -6.70046, -0.0575314, -16.3554)
 
 [node name="dudeweedlmao35" parent="Grass" instance=ExtResource("9_h2bod")]
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, -6.71512, -0.0575314, 26.3205)
