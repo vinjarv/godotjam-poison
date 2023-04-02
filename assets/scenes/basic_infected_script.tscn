@@ -13,7 +13,8 @@ height = 2.06095
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_r82ix"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c58hs"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrfqd"]
+resource_local_to_scene = true
 transparency = 1
 albedo_color = Color(1, 0, 0, 0)
 
@@ -268,11 +269,10 @@ transform = Transform3D(-0.032602, 0.0555446, 0.997924, -0.165691, 0.984339, -0.
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 2.98023e-08, -1, 0, -4.37114e-08, -0.0358908, -3.72529e-09, 0.114219)
 
 [node name="Green vest peasant" parent="Origin" instance=ExtResource("4_1dbpu")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 2.98023e-08, -1, 0, -4.37114e-08, -0.0358908, -3.72529e-09, 0.114219)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0358908, -3.72529e-09, 0.114219)
 
 [node name="Peasant_default" parent="Origin/Green vest peasant" index="0"]
-transform = Transform3D(0, -0.731057, -4.35744e-08, 4.35744e-08, 0, -0.731057, 0.731057, 4.35744e-08, 0, 0, 0, 0)
-material_overlay = SubResource("StandardMaterial3D_c58hs")
+material_overlay = SubResource("StandardMaterial3D_nrfqd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Origin")
