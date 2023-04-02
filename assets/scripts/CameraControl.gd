@@ -77,11 +77,6 @@ func _input(event):
 			var peasant_viewport_position = camera.unproject_position(peasant.position)
 			if selection_rect.has_point(peasant_viewport_position):
 				peasants_selected.append(peasant)
-				peasant.find_child("poison effect").show()
-				peasant.find_child("selected_ring").show()
-			else:
-				peasant.find_child("poison effect").hide()
-				peasant.find_child("selected_ring").hide()
 		print("Selection: ")
 		print(peasants_selected)
 		

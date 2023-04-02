@@ -47,6 +47,7 @@ func _process(delta):
 		print("current health: ", health)
 	if (health <= 0):
 		death()
+	
 
 # Starts the death animation
 func death():
@@ -61,7 +62,6 @@ func _ready():
 	$AnimationPlayer.play("idle")
 	$AnimationPlayer.speed_scale = 0.5
 	$AnimationPlayer.advance(0.3 * randf())
-	$RatTimer.wait_time = randf_range(2, 6)
 	
 func set_animation(name):
 	if $AnimationPlayer.current_animation == "death":
@@ -72,8 +72,3 @@ func set_animation(name):
 		print(length)
 		$AnimationPlayer.advance(length * randf())
 	
-
-
-func _on_rat_timer_timeout():
-	$"we are rat we are rats/GPUParticles3D".emitting = true
-	$RatTimer.wait_time = randf_range(2, 6)
