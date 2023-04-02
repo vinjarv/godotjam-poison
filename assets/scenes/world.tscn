@@ -19,6 +19,7 @@ auto_exposure_enabled = true
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_gajv2")
+metadata/_edit_lock_ = true
 
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(0.989411, 0.12956, 0.0654356, -0.0664898, 0.805304, -0.589122, -0.129022, 0.578533, 0.80539, 0, 0, 0)
@@ -107,6 +108,8 @@ camera_attributes = SubResource("CameraAttributesPractical_tj207")
 [node name="Peasants" type="Node3D" parent="."]
 
 [node name="basic_ground" parent="." instance=ExtResource("3_k0xm0")]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" parent="basic_ground/Ground" index="0"]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0.0986252, 3.8147e-06, -0.00300598)
@@ -116,7 +119,7 @@ transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0.0986252, 3.8147e-06, -0.
 [node name="Trees" type="Node3D" parent="."]
 
 [node name="Pinetree" parent="Trees" instance=ExtResource("7_2y3hi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3294, -2.38419e-06, -14.2868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9341, -2.38419e-06, -14.342)
 
 [node name="Pinetree2" parent="Trees" instance=ExtResource("7_2y3hi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.66033, -2.38419e-06, -20.1871)
@@ -152,7 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7733, 0, 20.7674)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0354, 2.38419e-06, -4.43537)
 
 [node name="Pinetree13" parent="Trees" instance=ExtResource("7_2y3hi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7529, 0, 12.4744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2444, 0, 10.2576)
 
 [node name="Pinetree14" parent="Trees" instance=ExtResource("7_2y3hi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0118, 0, -37.8526)
@@ -516,10 +519,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.611, 0, -38.3015)
 [node name="Houses" type="Node3D" parent="."]
 
 [node name="basic_house" parent="Houses" instance=ExtResource("5_51e8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49918, 0, -8.33416)
+transform = Transform3D(0.911195, 0, 0.411976, 0, 1, 0, -0.411976, 0, 0.911195, -6.19224, 0, -6.22816)
 
 [node name="basic_house2" parent="Houses" instance=ExtResource("5_51e8j")]
-transform = Transform3D(0.33147, 0, 0.943466, 0, 1, 0, -0.943466, 0, 0.33147, -21.7279, -1.90735e-06, 2.97049)
+transform = Transform3D(0.432746, 0, -0.901516, 0, 1, 0, 0.901516, 0, 0.432746, 16.9934, -1.90735e-06, 19.7728)
 
 [node name="Grass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.181956, 0)
@@ -644,7 +647,7 @@ transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 36.9267, -0.05753
 transform = Transform3D(4.54552, 0, 0, 0, 1, 0, 0, 0, 4.95808, 32.8702, -0.0575314, -0.0666447)
 
 [node name="fort" parent="." instance=ExtResource("9_gmg3c")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 11.7085, 0, -62.8645)
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 17.8979, 0, -16.1949)
 amount_of_troops = 7
 
 [connection signal="pressed" from="CameraPivot/VictoryScreen/Panel/ExitButton" to="." method="_on_button_pressed"]

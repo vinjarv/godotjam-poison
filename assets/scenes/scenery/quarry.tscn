@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://assets/scripts/dudeweedlmao.gd" id="1_04p2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tclc"]
-size = Vector3(1, 0.874977, 1)
+size = Vector3(0.838495, 0.874977, 0.788655)
 
 [node name="quarry" type="Node3D"]
 script = ExtResource("1_04p2s")
@@ -16,5 +16,5 @@ mesh = ExtResource("1_3gvwp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00998163, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(4.71135, 0, 0, 0, 2.6182, 0, 0, 0, 5.09125, 0.319592, 0.796712, -0.125576)
+transform = Transform3D(4.71135, 0, 0, 0, 2.6182, 0, 0, 0, 5.09125, 0.432302, 0.796712, -0.366024)
 shape = SubResource("BoxShape3D_3tclc")

@@ -2,8 +2,8 @@
 
 [ext_resource type="ArrayMesh" uid="uid://6iiegl6l7sic" path="res://assets/models/Overworld/pinetree.obj" id="1_ulvfh"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tnccw"]
-size = Vector3(1, 2.69093, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qibe"]
+size = Vector3(0.735, 2.631, 0.734)
 
 [node name="Pinetree" type="Node3D"]
 
@@ -14,4 +14,5 @@ mesh = ExtResource("1_ulvfh")
 transform = Transform3D(3.36771, 0, 0, 0, 2.83634, 0, 0, 0, 3.12644, 0, 3.67307, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_tnccw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_0qibe")
