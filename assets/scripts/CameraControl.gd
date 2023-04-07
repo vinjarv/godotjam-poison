@@ -85,18 +85,21 @@ func _input(event):
 					house.find_child("house_interface").show()
 				else:
 					house.find_child("house_interface").hide()
-		else:
-			# Handle drag
-			var peasants_in_selection = []
-			var peasants_outside_selection = []
-			for peasant in peasants:
-				var peasant_viewport_position = camera.unproject_position(peasant.position)
-				if selection_rect.has_point(peasant_viewport_position):
-					peasants_in_selection.append(peasant)
-				else:
-					peasants_outside_selection.append(peasant)
-			deselect_peasants(peasants_outside_selection)
-			select_peasants(peasants_in_selection)
+					
+	if dragging:
+		# Handle drag
+		var selection_rect = Rect2(select_outline.position, select_outline.size)
+		var peasants = peasant_parent.get_children()
+		var peasants_in_selection = []
+		var peasants_outside_selection = []
+		for peasant in peasants:
+			var peasant_viewport_position = camera.unproject_position(peasant.position)
+			if selection_rect.has_point(peasant_viewport_position):
+				peasants_in_selection.append(peasant)
+			else:
+				peasants_outside_selection.append(peasant)
+		deselect_peasants(peasants_outside_selection)
+		select_peasants(peasants_in_selection)
 
 
 func get_ground_position(screen_pos : Vector2):
